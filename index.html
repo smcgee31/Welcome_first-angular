@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Welcome</title>
+</head>
+<body>
+  <main>
+
+    <div ng-controller="products">
+      <input type="text" placeholder="user name" ng-model="userFilter.name">
+      <input type="text" placeholder="user gender" ng-model="userFilter.gender">
+
+      <section class="people-container">
+        <div class="person" ng-repeat="user in users | filter: userFilter ">
+          <br>
+          <div>
+            <p ng-if='user.isNew === true'>Hey, welcome to our site!</p>
+            <p ng-if='user.isNew === undefined'>Hey, welcome back to our site!</p>
+          <p>name: {{user.name}}<br />
+          gender: {{user.gender}}<br />
+          phone: {{user.phone}} </p>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  <div>
+
+  </div>
+
+  </main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
+<script src="app.js"></script>
+
+
+</body>
+</html>
